@@ -1,0 +1,1 @@
+json.phthalo = "The #{@phthalo_blue.name} costs $#{@phthalo_blue.price}. It is #{@phthalo_blue.description} and looks like this: #{@phthalo_blue.image_url}."
