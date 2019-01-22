@@ -17,10 +17,10 @@ Rails.application.routes.draw do
 
     #create a single route that can display ANY single product using a query parameter
 
-    get "/query_products" => "products#query_products"
+    # get "/query_products" => "products#query_products"
 
-    #create a single route that can display ANY single product using a url segment parameter.
-    get "/query_products/:product" => "products#query_products"
+    # #create a single route that can display ANY single product using a url segment parameter.
+    # get "/query_products/:product" => "products#query_products"
 
     #restful index to list all products
     get "/products" => "products#index"

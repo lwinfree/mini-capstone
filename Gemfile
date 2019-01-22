@@ -50,3 +50,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'http'
 
 gem 'rb-readline'
+
+gem 'rack-cors', require: 'rack/cors'

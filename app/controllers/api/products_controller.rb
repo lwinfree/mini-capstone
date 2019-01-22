@@ -25,13 +25,13 @@ class Api::ProductsController < ApplicationController
   #   render 'palette-knife.json.jbuilder'
   # end
 
-  def query_products
-    query_products = params["product"]
-    # @display = Product.find_by(name:query_products)
-    @display = Product.find_by(id: query_products)
-    render 'query_products.json.jbuilder'
-    #for names with spaces, use %20 for the space in the URL
-  end
+  # def query_products
+  #   query_products = params["product"]
+  #   # @display = Product.find_by(name:query_products)
+  #   @display = Product.find_by(id: query_products)
+  #   render 'query_products.json.jbuilder'
+  #   #for names with spaces, use %20 for the space in the URL
+  # end
 
   def index
     @products = Product.all
