@@ -1,7 +1,9 @@
 json.name product.name
 json.price product.price
-json.image_url product.image_url
+json.images product.images
 json.description product.description
+json.supplier product.supplier.name
+json.id product.id
 
 json.formatted do
   json.price product.is_discounted?

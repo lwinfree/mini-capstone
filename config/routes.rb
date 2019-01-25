@@ -37,6 +37,9 @@ Rails.application.routes.draw do
     #RESTful destroy action. Run in insomnia
     delete "/products/:id" => "products#destroy"
 
+    # get "/suppliers" => "suppliers#index"
+
+
 
   end
 
