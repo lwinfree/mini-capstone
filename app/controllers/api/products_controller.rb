@@ -32,6 +32,7 @@ class Api::ProductsController < ApplicationController
   #   render 'query_products.json.jbuilder'
   #   #for names with spaces, use %20 for the space in the URL
   # end
+  before_action :authenticate_admin, except: [:index, :show]
 
   def index
     @products = Product.all
@@ -57,6 +58,11 @@ class Api::ProductsController < ApplicationController
     # else @products = @products.order(:id)
     # end
 
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      @products = category.products
+    end
+
 
     render 'index.json.jbuilder'
   end
@@ -70,8 +76,8 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params["name"],
       price: params["price"],
-      url: params["url"],
-      description: params["description"]
+      description: params["description"],
+      supplier_id: params["supplier_id"]
       )
     if @product.save
       render 'show.json.jbuilder'
@@ -84,7 +90,6 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: params["id"])
     @product.name = params["name"] || @product.name
     @product.price = params["price"] || @product.price
-    @product.url = params["url"] || @product.url
     @product.description = params["description"] || @product.description
     if @product.save
       render 'show.json.jbuilder'
