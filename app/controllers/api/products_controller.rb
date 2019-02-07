@@ -53,15 +53,15 @@ class Api::ProductsController < ApplicationController
     #   if sort_order = params["sort"]
     #     @products = @products.order(price: :desc)
     #   else
-    #     products = @products.order(:price)
+        @products = @products.order(price: :desc)
     #   end
     # else @products = @products.order(:id)
     # end
 
-    if params[:category]
-      category = Category.find_by(name: params[:category])
-      @products = category.products
-    end
+    # if params[:category]
+    #   category = Category.find_by(name: params[:category])
+    #   @products = category.products
+    # end
 
 
     render 'index.json.jbuilder'

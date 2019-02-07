@@ -1,0 +1,7 @@
+<h1> Products </h1>
+<% @products.each do |product|%>
+  <h2> Name: <%= product.name %> </h2>
+  <h4> Description: <%= product.description %> </h4>
+  <h4> Price: <%= number_to_currency(product.price) %> </h4>
+  <a href="/products/<%= product.id %>">More Info</a>
+<% end %>
